@@ -1,5 +1,5 @@
 > [!NOTE]
-> For English [click here](), or scroll down.
+> For English [click here](#Swift-language-basics), or scroll down.
 
 # Основы языка Swift
 Это репозиторий с моими выполненными домашними заданиями по курсу "Основы языка Swift" от GeekBrains.
