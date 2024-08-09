@@ -40,3 +40,14 @@ let hypotenuse: Double = sqrt(pow(cathetusA, 2) + pow(cathetusB, 2))
 let perimeter: Double = cathetusA + cathetusB + hypotenuse
 
 print("Задача №2:\nКатет a - \(cathetusA), катет b - \(cathetusB). Площадь - \(area). Гипотенуза - \(hypotenuse). Периметр - \(perimeter)\n")
+
+// 3. (необязательно) Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5 лет.
+
+// Введите сумму вклада и годовой процент
+let depositAmount: Double = 350000
+let annualInterest: Double = 18
+
+// Расчет простых процентов за 5 лет
+let totalEarned = ((depositAmount * annualInterest) / 100) * 5
+
+print("Задача №3:\nСумма вклада: \(depositAmount)₽. Годовой процент: \(annualInterest)%. За 5 лет вы заработаете: \(totalEarned)₽. В итоге через 5 лет у вас будет: \(depositAmount + totalEarned)₽")
