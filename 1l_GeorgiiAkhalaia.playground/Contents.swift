@@ -23,3 +23,20 @@ if discriminant < 0 {
     let x2: Double = (-b + sqrt(discriminant)) / (2 * a)
     print("Дискриминант: \(discriminant). Дискриминант больше 0. Есть два корня. x1 = \(x1), x2 = \(x2)\n")
 }
+
+// 2. Даны катеты прямоугольного треугольника. Найти площадь, периметр и гипотенузу треугольника.
+
+// Введите катеты
+let cathetusA: Double = 9
+let cathetusB: Double = 21
+
+// Вычисляем площадь
+let area: Double = (cathetusA * cathetusB) / 2
+
+// Вычисляем гипотенузу
+let hypotenuse: Double = sqrt(pow(cathetusA, 2) + pow(cathetusB, 2))
+
+// Вычисляем периметр
+let perimeter: Double = cathetusA + cathetusB + hypotenuse
+
+print("Задача №2:\nКатет a - \(cathetusA), катет b - \(cathetusB). Площадь - \(area). Гипотенуза - \(hypotenuse). Периметр - \(perimeter)\n")
