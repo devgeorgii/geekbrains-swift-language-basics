@@ -61,3 +61,38 @@ func addFibonacciNumbers(array: [Int], howManyNumbersToAdd: Int, ifNotEmptyErase
 var fibonacciArray: [Int] = [1, 8]
 fibonacciArray = addFibonacciNumbers(array: fibonacciArray, howManyNumbersToAdd: 50, ifNotEmptyErase: true)
 print("Задача №5:\n\(fibonacciArray)\n")
+
+// 6. (необязательно) Заполнить массив из 100 элементов различными простыми числами. Натуральное число, большее единицы, называется простым, если оно делится только на себя и на единицу. Для нахождения всех простых чисел не больше заданного числа n, следуя методу Эратосфена, нужно выполнить следующие шаги:
+    // a. Выписать подряд все целые числа от двух до n (2, 3, 4, ..., n).
+    // b. Пусть переменная p изначально равна двум - первому простому числу.
+    // c. Зачеркнуть в списке числа от 2 + p до n, считая шагом p.
+    // d. Найти первое не зачёркнутое число в списке, большее, чем p, и присвоить значению переменной p это число.
+    // e. Повторять шаги c и d, пока возможно.
+//  Источник: https://younglinux.info/algorithm/sieve
+
+func addNumbersUsingEratosthenesMethod(array: [Int], howManyNumbersToAdd: Int) -> [Int] {
+    var functionArray: [Int] = array
+    functionArray = Array(0...howManyNumbersToAdd)
+    functionArray[1] = 0
+    var count = 2
+    var j: Int
+    while count < howManyNumbersToAdd {
+        if functionArray[count] != 0 {
+            j = count * 2
+            while j <= howManyNumbersToAdd {
+                functionArray[j] = 0
+                j = j + count
+            }
+        }
+        count += 1
+    }
+    // Удаляем все 0
+    for numbers in functionArray {
+        functionArray.removeAll(where: { $0 == 0 })
+    }
+    return functionArray
+}
+
+var eratosthenesArray: [Int] = []
+eratosthenesArray = addNumbersUsingEratosthenesMethod(array: eratosthenesArray, howManyNumbersToAdd: 100)
+print("Задача №6:\n\(eratosthenesArray)\n")
