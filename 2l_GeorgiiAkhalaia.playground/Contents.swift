@@ -19,4 +19,13 @@ isDivisibleByThree(b)
 // 3. Создать возрастающий массив из 100 чисел.
 var array: [Int] = Array(stride(from: 0, to: 100, by: 1))
 
-print("Задача №3:\n\(array)")
+print("Задача №3:\n\(array)\n")
+
+// 4. Удалить из этого массива все четные числа и все числа, которые не делятся на 3.
+for count in array {
+    if isEvenNumber(count) == true || isDivisibleByThree(count) == false {
+        array.remove(at: array.firstIndex(of: count)!)
+    }
+}
+
+print("Задача №4:\n\(array)\n")
