@@ -68,6 +68,13 @@ struct SportCar {
             }
         }
     }
+    
+    // 6. Вывести значения свойств экземпляров в консоль.
+    func describe() {
+        let engineStatusText: String = (isEngineOn == true) ? "запущен" : "заглушен"
+        let windowsStatusText: String = (areWindowsOpen == true) ? "открыты" : "закрыты"
+        print("Автомобиль \(carMake) \(carModel), \(yearOfIssue) года выпуска, с объёмом багажника: \(trunkVolume) литров. У автомобиля \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в багажнике: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров\n")
+    }
 }
 
 // 1. Описать несколько структур - любой легковой автомобиль SportCar и любой грузовик TrunkCar.
@@ -126,37 +133,57 @@ struct TrunkCar {
             }
         }
     }
+    
+    // 6. Вывести значения свойств экземпляров в консоль.
+    func describe() {
+        let engineStatusText: String = (isEngineOn == true) ? "запущен" : "заглушен"
+        let windowsStatusText: String = (areWindowsOpen == true) ? "открыты" : "закрыты"
+        print("Грузовик \(trunkMake) \(trunkModel), \(yearOfIssue) года выпуска, с объёмом кузова: \(bodyVolume) литров. У грузовика \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в кузове: \(leftBodyVolume) литров, загружено \(filledBodyVolume) литров\n")
+    }
 }
 
 // 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
+// 6. Вывести значения свойств экземпляров в консоль.
 var car = SportCar(carMake: "Volvo", carModel: "EX30", yearOfIssue: 2024, isEngineOn: false, areWindowsOpen: false, trunkVolume: 318, filledTrunkVolume: 10)
 var car2 = SportCar(carMake: "BMW", carModel: "M4", yearOfIssue: 2024, isEngineOn: true, areWindowsOpen: false, trunkVolume: 339.802, filledTrunkVolume: 0)
 var car3 = SportCar(carMake: "Toyota", carModel: "GR Yaris", yearOfIssue: 2020, isEngineOn: true, areWindowsOpen: true, trunkVolume: 174, filledTrunkVolume: 59.65)
 
+car.describe()
 car.action(.startEngine)
 car.action(.loadCargo(volume: 400))
 car.action(.loadCargo(volume: 150))
+car.describe()
 
+car2.describe()
 car2.action(.stopEngine)
 car2.action(.unloadCargo(volume: 105.84))
 car2.action(.emptyCargo)
+car2.describe()
 
+car3.describe()
 car3.action(.closeWindows)
 car3.action(.emptyCargo)
+car3.describe()
 
 
 var trunk = TrunkCar(trunkMake: "Volvo", trunkModel: "FM Low Entry", yearOfIssue: 2024, isEngineOn: false, areWindowsOpen: false, bodyVolume: 445, filledBodyVolume: 0)
 var trunk2 = TrunkCar(trunkMake: "CAT", trunkModel: "793F", yearOfIssue: 2009, isEngineOn: true, areWindowsOpen: true, bodyVolume: 142_000, filledBodyVolume: 89754.346)
 var trunk3 = TrunkCar(trunkMake: "Ford", trunkModel: "1833D DC", yearOfIssue: 2019, isEngineOn: true, areWindowsOpen: false, bodyVolume: 399_516.6, filledBodyVolume: 516.6)
 
+trunk.describe()
 trunk.action(.startEngine)
 trunk.action(.loadCargo(volume: 500))
 trunk.action(.loadCargo(volume: 89.65))
+trunk.describe()
 
+trunk2.describe()
 trunk2.action(.stopEngine)
 trunk2.action(.unloadCargo(volume: 9754.346))
 trunk2.action(.emptyCargo)
+trunk2.describe()
 
+trunk3.describe()
 trunk3.action(.openWindows)
 trunk3.action(.unloadCargo(volume: 516.6))
 trunk3.action(.emptyCargo)
+trunk3.describe()
