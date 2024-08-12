@@ -25,3 +25,25 @@ class Car {
     
     func action(_ action: Action) { }
 }
+
+// 2. Описать пару его наследников TrunkCar и SportCar. Подумать, какими отличительными свойствами обладают эти автомобили. Описать в каждом наследнике специфичные для него свойства.
+class TrunkCar: Car {
+    var isTrailerAttached: Bool // Статус крепления трейлера
+    var powertrain: String = "4x4" // Статус трансмиссии. Стандартное значение 4x4
+    
+    init(make: String, model: String, yearOfIssue: Int, isEngineOn: Bool, areWindowsOpen: Bool, trunkVolume: Double, filledTrunkVolume: Double, isTrailerAttached: Bool) {
+        self.isTrailerAttached = isTrailerAttached
+        super.init(make: make, model: model, yearOfIssue: yearOfIssue, isEngineOn: isEngineOn, areWindowsOpen: areWindowsOpen, trunkVolume: trunkVolume, filledTrunkVolume: filledTrunkVolume)
+    }
+}
+
+// 2. Описать пару его наследников TrunkCar и SportCar. Подумать, какими отличительными свойствами обладают эти автомобили. Описать в каждом наследнике специфичные для него свойства.
+class SportCar: Car {
+    var nitroCounter: Int = 5 // Счётчик нитро. Максимальное количество 5
+    var isTractionControlOn: Bool // Статус контроля тяги
+    
+    init(make: String, model: String, yearOfIssue: Int, isEngineOn: Bool, areWindowsOpen: Bool, trunkVolume: Double, filledTrunkVolume: Double, isTractionControlOn: Bool) {
+        self.isTractionControlOn = isTractionControlOn
+        super.init(make: make, model: model, yearOfIssue: yearOfIssue, isEngineOn: isEngineOn, areWindowsOpen: areWindowsOpen, trunkVolume: trunkVolume, filledTrunkVolume: filledTrunkVolume)
+    }
+}
