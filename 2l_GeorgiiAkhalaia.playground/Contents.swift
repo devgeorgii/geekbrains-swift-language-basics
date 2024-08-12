@@ -15,3 +15,8 @@ func isDivisibleByThree(_ number: Int) -> Bool {
 
 let b = 99
 isDivisibleByThree(b)
+
+// 3. Создать возрастающий массив из 100 чисел.
+var array: [Int] = Array(stride(from: 0, to: 100, by: 1))
+
+print("Задача №3:\n\(array)")
