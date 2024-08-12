@@ -168,6 +168,14 @@ class TrunkCar: Car {
             print("Вы пытаетесь применить действие не доступное для данной машины.")
         }
     }
+    
+    // 6. Вывести значения свойств экземпляров в консоль.
+    func describe() {
+        let engineStatusText: String = (isEngineOn == true) ? "запущен" : "заглушен"
+        let windowsStatusText: String = (areWindowsOpen == true) ? "открыты" : "закрыты"
+        let trailerStatusText: String = (isTrailerAttached == true) ? "прикреплён" : "откреплён"
+        print("Грузовик \(make) \(model), \(yearOfIssue) года выпуска, с объёмом кузова: \(trunkVolume) литров. У грузовика \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в кузове: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров. У грузовика \(trailerStatusText) трейлер, и установлена трансмиссия \(powertrain)\n")
+    }
 }
 
 // 2. Описать пару его наследников TrunkCar и SportCar. Подумать, какими отличительными свойствами обладают эти автомобили. Описать в каждом наследнике специфичные для него свойства.
@@ -273,44 +281,65 @@ class SportCar: Car {
             print("Вы пытаетесь применить действие не доступное для данной машины.")
         }
     }
+    
+    // 6. Вывести значения свойств экземпляров в консоль.
+    func describe() {
+        let engineStatusText: String = (isEngineOn == true) ? "запущен" : "заглушен"
+        let windowsStatusText: String = (areWindowsOpen == true) ? "открыты" : "закрыты"
+        let tractionControlText: String = (isTractionControlOn == true) ? "включён" : "выключен"
+        print("Спортивный автомобиль \(make) \(model), \(yearOfIssue) года выпуска, с объёмом багажника: \(trunkVolume) литров. У спортивного автомобиля \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в багажнике: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров. Контроль тяги \(tractionControlText), доступного нитро: \(nitroCounter)\n")
+    }
 }
 
 // 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
+// 6. Вывести значения свойств экземпляров в консоль.
 var sportCar = SportCar(make: "Ferrari", model: "306FX", yearOfIssue: 2019, isEngineOn: true, areWindowsOpen: false, trunkVolume: 140, filledTrunkVolume: 23.68, isTractionControlOn: true)
 var sportCar2 = SportCar(make: "McLaren", model: "Artura Spider", yearOfIssue: 2025, isEngineOn: false, areWindowsOpen: true, trunkVolume: 160, filledTrunkVolume: 0, isTractionControlOn: true)
 var sportCar3 = SportCar(make: "Lamborghini", model: "Revuelto", yearOfIssue: 2023, isEngineOn: true, areWindowsOpen: true, trunkVolume: 150, filledTrunkVolume: 87, isTractionControlOn: false)
 
+sportCar.describe()
 sportCar.action(.closeWindows)
 sportCar.action(.useNitro(nitro: 3))
 sportCar.action(.refillNitro(nitro: 10))
 sportCar.action(.refillNitro(nitro: 2))
 sportCar.action(.tractionControlOn)
 sportCar.action(.tractionControlOff)
+sportCar.describe()
 
+sportCar2.describe()
 sportCar2.action(.attachTrailer)
 sportCar2.action(.closeWindows)
 sportCar2.action(.unloadCargo(volume: 17))
+sportCar2.describe()
 
+sportCar3.describe()
 sportCar3.action(.stopEngine)
 sportCar3.action(.emptyCargo)
 sportCar3.action(.tractionControlOn)
 sportCar3.action(.setPowertrainTo6x4)
+sportCar3.describe()
 
 var trunkCar = TrunkCar(make: "Volvo", model: "FM Low Entry", yearOfIssue: 2024, isEngineOn: false, areWindowsOpen: false, trunkVolume: 445, filledTrunkVolume: 0, isTrailerAttached: false)
 var trunkCar2 = TrunkCar(make: "CAT", model: "793F", yearOfIssue: 2009, isEngineOn: true, areWindowsOpen: true, trunkVolume: 142000, filledTrunkVolume: 89754.346, isTrailerAttached: true)
 var trunkCar3 = TrunkCar(make: "Ford", model: "1833D DC", yearOfIssue: 2019, isEngineOn: true, areWindowsOpen: false, trunkVolume: 399516.6, filledTrunkVolume: 516.6, isTrailerAttached: true)
 
+trunkCar.describe()
 trunkCar.action(.attachTrailer)
 trunkCar.action(.setPowertrainTo4x4)
 trunkCar.action(.setPowertrainTo6x4)
+trunkCar.describe()
 
+trunkCar2.describe()
 trunkCar2.action(.stopEngine)
 trunkCar2.action(.useNitro(nitro: 4))
 trunkCar2.action(.closeWindows)
 trunkCar2.action(.detachTrailer)
+trunkCar2.describe()
 
+trunkCar3.describe()
 trunkCar3.action(.startEngine)
 trunkCar3.action(.openWindows)
 trunkCar3.action(.emptyCargo)
 trunkCar3.action(.attachTrailer)
 trunkCar3.action(.loadCargo(volume: 400000))
+trunkCar3.describe()
