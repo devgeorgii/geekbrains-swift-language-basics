@@ -1,5 +1,27 @@
 import UIKit
 
+// 3. Взять из прошлого урока enum с действиями над автомобилем. Подумать, какие особенные действия имеет TrunkCar, а какие - SportCar. Добавить эти действия в перечисление.
+enum Action {
+    case startEngine
+    case stopEngine
+    case openWindows
+    case closeWindows
+    case loadCargo(volume: Double)
+    case unloadCargo(volume: Double)
+    case emptyCargo
+    case attachTrailer
+    case detachTrailer
+    case setPowertrainTo4x2
+    case setPowertrainTo4x4
+    case setPowertrainTo6x6
+    case setPowertrainTo6x4
+    case setPowertrainTo8x8
+    case useNitro(nitro: Int)
+    case refillNitro(nitro: Int)
+    case tractionControlOn
+    case tractionControlOff
+}
+
 // 1. Описать класс Car с общими свойствами автомобилей и пустым методом действия по аналогии с прошлым заданием.
 class Car {
     let make: String // Марка
