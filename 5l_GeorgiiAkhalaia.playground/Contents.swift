@@ -509,3 +509,11 @@ sportCar2.actionSportCar(.nitro(perform: .refillNitro(nitro: 5)))
 sportCar3.action(.engine(perform: .stopEngine))
 sportCar3.action(.windows(perform: .closeWindows))
 sportCar3.actionSportCar(.tractionControl(perform: .tractionControlOn))
+
+// 6. Вывести сами объекты в консоль.
+print(trunkCar)
+print(trunkCar2)
+print(trunkCar3)
+print(sportCar)
+print(sportCar2)
+print(sportCar3)
