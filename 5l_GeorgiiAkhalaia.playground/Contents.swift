@@ -468,3 +468,44 @@ extension SportCar: CustomStringConvertible {
         return "Спортивный автомобиль \(make) \(model), \(yearOfIssue) года выпуска, с объёмом багажника: \(trunkVolume) литров. У спортивного автомобиля \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в багажнике: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров. Контроль тяги \(tractionControlText), доступного нитро: \(nitroCounter)\n"
     }
 }
+
+// 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
+var trunkCar = TrunkCar(make: "CAT", model: "2305XC", yearOfIssue: 2005, isEngineOn: true, areWindowsOpen: true, trunkVolume: 850_000, filledTrunkVolume: 100_000, isTrailerAttached: true)
+var trunkCar2 = TrunkCar(make: "Volvo", model: "FM Low Entry", yearOfIssue: 2024, isEngineOn: false, areWindowsOpen: false, trunkVolume: 445, filledTrunkVolume: 0, isTrailerAttached: false)
+var trunkCar3 = TrunkCar(make: "Ford", model: "1833D DC", yearOfIssue: 2019, isEngineOn: false, areWindowsOpen: true, trunkVolume: 399_516.6, filledTrunkVolume: 516.6, isTrailerAttached: true)
+
+trunkCar.action(.windows(perform: .openWindows))
+trunkCar.actionTrunkCar(.trailer(perform: .attachTrailer))
+trunkCar.actionTrunkCar(.powertrain(perform: .setPowertrainTo4x4))
+trunkCar.actionTrunkCar(.powertrain(perform: .setPowertrainTo8x8))
+
+trunkCar2.action(.cargo(perform: .emptyCargo))
+trunkCar2.action(.cargo(perform: .loadCargo(volume: 145)))
+trunkCar2.actionTrunkCar(.trailer(perform: .detachTrailer))
+trunkCar2.actionTrunkCar(.trailer(perform: .attachTrailer))
+
+trunkCar3.action(.engine(perform: .startEngine))
+trunkCar3.action(.windows(perform: .closeWindows))
+trunkCar3.actionTrunkCar(.trailer(perform: .detachTrailer))
+trunkCar3.actionTrunkCar(.powertrain(perform: .setPowertrainTo6x6))
+
+var sportCar = SportCar(make: "Ferrari", model: "306FX", yearOfIssue: 2019, isEngineOn: true, areWindowsOpen: false, trunkVolume: 140, filledTrunkVolume: 23.68, isTractionControlOn: true)
+var sportCar2 = SportCar(make: "McLaren", model: "Artura Spider", yearOfIssue: 2025, isEngineOn: false, areWindowsOpen: true, trunkVolume: 160, filledTrunkVolume: 0, isTractionControlOn: true)
+var sportCar3 = SportCar(make: "Lamborghini", model: "Revuelto", yearOfIssue: 2023, isEngineOn: true, areWindowsOpen: true, trunkVolume: 150, filledTrunkVolume: 87, isTractionControlOn: false)
+
+sportCar.action(.windows(perform: .closeWindows))
+sportCar.actionSportCar(.nitro(perform: .useNitro(nitro: 3)))
+sportCar.actionSportCar(.nitro(perform: .refillNitro(nitro: 10)))
+sportCar.actionSportCar(.nitro(perform: .refillNitro(nitro: 2)))
+sportCar.actionSportCar(.tractionControl(perform: .tractionControlOn))
+sportCar.actionSportCar(.tractionControl(perform: .tractionControlOff))
+
+sportCar2.action(.cargo(perform: .emptyCargo))
+sportCar2.action(.cargo(perform: .loadCargo(volume: 161)))
+sportCar2.action(.cargo(perform: .loadCargo(volume: 15)))
+sportCar2.actionSportCar(.nitro(perform: .useNitro(nitro: 5)))
+sportCar2.actionSportCar(.nitro(perform: .refillNitro(nitro: 5)))
+
+sportCar3.action(.engine(perform: .stopEngine))
+sportCar3.action(.windows(perform: .closeWindows))
+sportCar3.actionSportCar(.tractionControl(perform: .tractionControlOn))
