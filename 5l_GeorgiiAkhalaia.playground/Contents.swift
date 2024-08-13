@@ -297,6 +297,25 @@ class TrunkCar: Car {
     }
 }
 
+// 4. Для каждого класса написать расширение, имплементирующее протокол CustomStringConvertible.
+extension TrunkCar: CustomStringConvertible {
+    var engineStatusText: String {
+        return(isEngineOn == true) ? "запущен" : "заглушен"
+    }
+    
+    var windowsStatusText: String {
+        return (areWindowsOpen == true) ? "открыты" : "закрыты"
+    }
+    
+    var trailerStatusText: String {
+        return (isTrailerAttached == true) ? "прикреплён" : "откреплён"
+    }
+    
+    var description: String {
+        return "Грузовик \(make) \(model), \(yearOfIssue) года выпуска, с объёмом кузова: \(trunkVolume) литров. У грузовика \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в кузове: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров. У грузовика \(trailerStatusText) трейлер, и установлена трансмиссия \(powertrain)\n"
+    }
+}
+
 // 3. Создать два класса, имплементирующих протокол Car - TrunkCar и SportCar. Описать в них свойства, отличающиеся для спортивного автомобиля и грузовика.
 class SportCar: Car {
     var make: String // Марка
@@ -428,5 +447,24 @@ class SportCar: Car {
                 }
             }
         }
+    }
+}
+
+// 4. Для каждого класса написать расширение, имплементирующее протокол CustomStringConvertible.
+extension SportCar: CustomStringConvertible {
+    var engineStatusText: String {
+        (isEngineOn == true) ? "запущен" : "заглушен"
+    }
+    
+    var windowsStatusText: String {
+        (areWindowsOpen == true) ? "открыты" : "закрыты"
+    }
+    
+    var tractionControlText: String {
+        (isTractionControlOn == true) ? "включён" : "выключен"
+    }
+    
+    var description: String {
+        return "Спортивный автомобиль \(make) \(model), \(yearOfIssue) года выпуска, с объёмом багажника: \(trunkVolume) литров. У спортивного автомобиля \(engineStatusText) двигатель и \(windowsStatusText) окна. Свободного места в багажнике: \(leftTrunkVolume) литров, загружено \(filledTrunkVolume) литров. Контроль тяги \(tractionControlText), доступного нитро: \(nitroCounter)\n"
     }
 }
