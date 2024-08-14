@@ -28,4 +28,42 @@ struct Queue<Element> {
     func size() -> Int {
         return queueArray.count
     }
+    
+    // 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
+    func filter(_ transform: (Element) -> Bool) -> [Element] {
+        var transformedArray: [Element] = []
+        for element in queueArray {
+            if transform(element) {
+                transformedArray.append(element)
+            }
+        }
+        return transformedArray
+    }
+    
+    func map(_ transform: (Element) -> Element) -> [Element] {
+        var transformedArray: [Element] = []
+        for element in queueArray {
+            let transformedElement = transform(element)
+            transformedArray.append(transformedElement)
+        }
+        return transformedArray
+    }
 }
+
+var queue = Queue<String>()
+queue.enqueue("Georgii")
+queue.enqueue("Bob")
+queue.enqueue("Igor")
+queue.enqueue("Ivan")
+print(queue)
+queue.dequeue()
+print(queue)
+queue.peek()
+queue.empty()
+queue.size()
+
+let greetingMessage = queue.map {"Hey, " + $0}
+print(greetingMessage)
+
+let filteredQueue = queue.filter {$0.count == 4}
+print(filteredQueue)
