@@ -48,6 +48,23 @@ struct Queue<Element> {
         }
         return transformedArray
     }
+    
+    // 3. (необязательно) Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
+    subscript(index: Int) -> Element? {
+        get {
+            guard !queueArray.isEmpty, index >= 0, index <= queueArray.count - 1 else {
+                print("Индекс вне диапазона")
+                return nil
+            }
+            return queueArray[index]
+        }
+        set {
+            guard let newValue = newValue, index >= 0, index <= queueArray.count - 1 else {
+                return
+            }
+            queueArray[index] = newValue
+        }
+    }
 }
 
 var queue = Queue<String>()
@@ -67,3 +84,8 @@ print(greetingMessage)
 
 let filteredQueue = queue.filter {$0.count == 4}
 print(filteredQueue)
+
+print(queue[3])
+queue[4]
+queue[5] = "Misha"
+print(queue)
