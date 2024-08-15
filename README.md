@@ -10,6 +10,8 @@
 2. Даны катеты прямоугольного треугольника. Найти площадь, периметр и гипотенузу треугольника.
 3. (необязательно) Пользователь вводит сумму вклада в банк и годовой процент. Найти сумму вклада через 5 лет.
 
+[Решение ->](1l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Урок 2. Синтаксис и основные операторы Swift
 
 1. Написать функцию, которая определяет, чётное число или нет.
@@ -25,6 +27,8 @@
     4. Найти первое не зачёркнутое число в списке, большее, чем p, и присвоить значению переменной p это число.
     5. Повторять шаги iii и iv, пока возможно.
 
+[Решение ->](2l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Урок 3. Комплексные типы данных.
 
 1. Описать несколько структур - любой легковой автомобиль SportCar и любой грузовик TrunkCar.
@@ -33,6 +37,8 @@
 4. Добавить в структуры метод с одним аргументом типа перечисления, который будет менять свойства структуры в зависимости от действия.
 5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
 6. Вывести значения свойств экземпляров в консоль.
+
+[Решение ->](3l_GeorgiiAkhalaia.playground/Contents.swift)
 
 ## Урок 4. Введение в ООП - объектно-ориентированное программирование
 
@@ -43,6 +49,8 @@
 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
 6. Вывести значения свойств экземпляров в консоль.
 
+[Решение ->](4l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Урок 5. ООП: требование к классам, протоколы, расширения, полиморфизм, композиция
 
 1. Создать протокол Car и описать свойства, общие для автомобилей, а также метод действия.
@@ -52,11 +60,15 @@
 5. Создать несколько объектов каждого класса. Применить к ним различные действия.
 6. Вывести сами объекты в консоль.
 
+[Решение ->](5l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Урок 6. Продвинутое ООП
 
 1. Реализовать свой тип коллекции "очередь" (queue) с использованием дженериков.
 2. Добавить ему несколько методов высшего порядка, полезных для этой коллекции (пример: filter для массивов)
 3. (необязательно) Добавить свой subscript, который будет возвращать nil в случае обращения к несуществующему индексу.
+
+[Решение ->](6l_GeorgiiAkhalaia.playground/Contents.swift)
 
 ## Урок 7. Управление ошибками в приложениях
 
@@ -71,6 +83,8 @@ This is a repository with my completed homework assignments for the course "Swif
 1. Solve a quadratic equation.
 2. Given the legs of a right triangle. Find the area, perimeter, and hypotenuse of the triangle.
 3. (optional) The user enters the amount of the deposit in the bank and the annual interest. Find the deposit amount after 5 years.
+
+[Solution ->](1l_GeorgiiAkhalaia.playground/Contents.swift)
 
 ## Lesson 2. Syntax and basic operators of Swift
 
@@ -87,6 +101,8 @@ This is a repository with my completed homework assignments for the course "Swif
     4. Find the first non-crossed-out number in the list that is greater than p and assign this number to the variable p.
     5. Repeat steps iii and iv as long as possible.
 
+[Solution ->](2l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Lesson 3. Complex data types.
 
 1. Describe several structures - any SportCar and any TrunkCar.
@@ -95,6 +111,8 @@ This is a repository with my completed homework assignments for the course "Swif
 4. Add a method with one argument of the enumeration type to the structures, which will change the structure properties depending on the action.
 5. Initialize several instances of the structures. Apply different actions to them.
 6. Print the values ​​of the instance properties to the console.
+
+[Solution ->](3l_GeorgiiAkhalaia.playground/Contents.swift)
 
 ## Lesson 4. Introduction to OOP - Object-Oriented Programming
 
@@ -105,6 +123,8 @@ This is a repository with my completed homework assignments for the course "Swif
 5. Create several objects of each class. Apply different actions to them.
 6. Print the values ​​of the instance properties to the console.
 
+[Solution ->](4l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Lesson 5. OOP: requirements for classes, protocols, extensions, polymorphism, composition
 
 1. Create a Car protocol and describe the properties common to cars, as well as the action method.
@@ -114,11 +134,15 @@ This is a repository with my completed homework assignments for the course "Swif
 5. Create several objects of each class. Apply various actions to them.
 6. Print the objects themselves to the console.
 
+[Solution ->](5l_GeorgiiAkhalaia.playground/Contents.swift)
+
 ## Lesson 6. Advanced OOP
 
 1. Implement your own "queue" collection type using generics.
 2. Add several higher-order methods useful for this collection (example: filter for arrays)
 3. (optional) Add your own subscript that will return nil if a non-existent index is accessed.
+
+[Solution ->](6l_GeorgiiAkhalaia.playground/Contents.swift)
 
 ## Lesson 7. Managing Errors in Applications
 
